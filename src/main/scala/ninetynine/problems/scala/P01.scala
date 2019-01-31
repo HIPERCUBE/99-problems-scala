@@ -8,6 +8,6 @@ class P01Impl[T] extends P01[T] {
   override def last(list: List[T]): Option[T] = list match {
     case Nil => None
     case head :: Nil => Some(head)
-    case head :: tail => last(tail)
+    case _ :: tail => last(tail)
   }
 }
