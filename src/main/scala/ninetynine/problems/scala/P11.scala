@@ -6,9 +6,9 @@ trait P11[T] {
 
 class P11Impl[T] extends P11[T] {
   override def encodeModified(list: List[T]): List[Any] = {
-    new P09Impl[T].pack(list).map {
-      case packed if packed.size == 1 => packed.head
-      case packed => (packed.size, packed.head)
+    new P10Impl[T].encode(list).map {
+      case (1, x) => x
+      case e => e
     }
   }
 }
